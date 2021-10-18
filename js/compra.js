@@ -60,7 +60,7 @@ window.onload = inicio; // Establece una funcion de inicio
 function inicio(){
     var btnSubmit = document.getElementById("btnComprar");
     var idPelicula = localStorage.idPelicula;
-    alert(idPelicula);
+
     if( isNaN(idPelicula) ){
         idPelicula = 1;
     }
@@ -117,17 +117,22 @@ function llenarPelicula(idPelicula) {
             poster.src = "../img/venom2.jpg";
             llenarHorario(peliculas.Pelicula1.Horarios);
             break;
-        case 1:
+        case 2:
             titulo.innerHTML = peliculas.Pelicula2.Nombre;
             break;
-        case 1:
+        case 3:
             titulo.innerHTML = peliculas.Pelicula3.Nombre;
             break;
-        case 1:
+        case 4:
             titulo.innerHTML = peliculas.Pelicula4.Nombre;
             break;
-        case 1:
+        case 5:
             titulo.innerHTML = peliculas.Pelicula5.Nombre;
+            break;
+        default:
+            titulo.innerHTML = peliculas.Pelicula1.Nombre;
+            poster.src = "../img/venom2.jpg";
+            llenarHorario(peliculas.Pelicula1.Horarios);
             break;
     }
 }
