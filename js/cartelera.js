@@ -4,54 +4,57 @@ const objJSON = {
         "Duracion": "2 horas" ,
         "Precio" : "2.53",
         "Clasificacion" : "+12",
-        "TipoB": "Premiun", 
+        "TipoB": "Ecoamigable", 
         "Horarios": {
             "1": "4:30" , "2": "6:30", "3": "8:30"
         },
-        "img" : "https://www.lifeboxset.com/wp-content/uploads/2020/01/20200110_161713926344-vvdmvn88xby31-292x365.png"
+        "img" : "img/venom2.jpg"
     }, "Pelicula2" : {
         "Nombre": "BlackWidown",
         "Duracion": "2 horas" ,
         "Precio" : "3",
         "Clasificacion" : "+12",
-        "TipoB": "Premiun", 
+        "TipoB": "Normal", 
         "Horarios": {
             "1": "5:00" , "2": "7:00", "3": "9:00"
-        } 
+        },
+        "img" : "img/blackwidow.jpg"
     },
     "Pelicula3" : {
         "Nombre": "Spider-Man: No way Home",
         "Duracion": "3 horas" ,
         "Precio" : "4",
         "Clasificacion" : "+12",
-        "TipoB": "Premiun", 
+        "TipoB": "Cuero exportado", 
         "Horarios": {
             "1": "3:30" , "2": "6:30", "3": "9:30"
-        } 
+        },
+        "img": "img/spirderman.jpg"
     },
     "Pelicula4" : {
         "Nombre": "Batman",
         "Duracion": "2 horas" ,
         "Precio" : "4",
         "Clasificacion" : "+18",
-        "TipoB": "Premiun", 
+        "TipoB": "Cuero exportado", 
         "Horarios": {
             "1": "2:30" , "2": "4:30", "3": "6:30"
-        } 
+        }, 
+        "img": "img/batman.jpg"
     },
     "Pelicula5" : {
         "Nombre": "Doctor Strange: En el multiverso de la locura",
         "Duracion": "2 horas" ,
         "Precio" : "4",
         "Clasificacion" : "+12",
-        "TipoB": "Premiun", 
+        "TipoB": "Plastico resistente", 
         "Horarios": {
             "1": "3:30" , "2": "5:30", "3": "7:30"
-        } 
+        }, 
+        "img": "img/ds.jpg"
     }
     
 }
-
 
 window.onload = start;
 function start(){
@@ -62,7 +65,7 @@ function start(){
         var card = ` <div class="card" id='${key}'>
         <input type="hidden" value="${number}" />
         <div class="image">
-            <img src="img/venom2.jpg" alt="">
+            <img src="${objJSON[key].img}"  alt="${key}">
         </div>
         <div class="info">
             <h2>
