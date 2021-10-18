@@ -10,57 +10,54 @@
 <body>
     <section>
         <article class="contenedor-titulo">
-            <h2 id="titulo-pelicula">NOMBRE PELICULA</h2>
+            <h2 id="titulo-pelicula">NOT TITLE</h2>
         </article>
         <article class="contenedor-cuerpo">
             <div class="contenedor-poster">
-                <img src="../img/venom2.jpg" alt="Venom 2">
+                <img src="" alt="Imagen de pelicula" id="poster-pelicula">
             </div>
             <div class="contenedor-form">
                 <div class="contenedor-input">
                     <label for="nEntrada">Cantidad de entradas:</label>
                     <div>
-                        <input type="number" name="nEntrada" id="nEntrada" min="1" max="100" required autofocus>
+                        <input type="number" name="nEntrada" id="nEntrada" min="1" max="100" value="1" required autofocus>
                     </div>
                 </div>
                 <div  class="contenedor-input">
                     <label for="">Seleccionar un horario:</label>
-                    <div>
-                        <input type="radio" name="" id="">
-                        <label for="">Hola</label>
+                    <div class="contenedor-radios" id="horarios-peliculas">
+                        <!---->
                     </div>
                 </div>
                 <div class="contenedor-input">
                     <label for="">Tipo de butaca:</label>
-                    <div>
-                        <input type="radio" name="" id="">
-                        <label for="">Hola</label>
+                    <div class="contenedor-radios">
+                        <div>
+                            <input type="radio" name="tipoButaca" id="tipoButaca" value="Cuero importado">
+                            <label>Cuero importado</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="tipoButaca" id="tipoButaca" value="Plástico resistente">
+                            <label>Plástico resistente</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="tipoButaca" id="tipoButaca" value="Eco amigable">
+                            <label>Eco amigable</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="tipoButaca" id="tipoButaca" value="Normal" checked>
+                            <label>Normal</label>
+                        </div>
                     </div>
                 </div>
                 <div class="contenedor-btn">
-                    <button class="btnSubmit">COMPRAR</button>
+                    <button class="btnSubmit" id="btnComprar">COMPRAR</button>
                 </div>
             </div>
         </article>
     </section>
-    <section>
-        <article class="contenedor-titulo-factura">
-            <h2>Visualización de la factura</h2>
-        </article>
-        <article class="contenedor-factura">
-            <div>
-                <p>Cliente: Diego Mancía</p>
-            </div>
-            <div>
-                <p>Pelicula: Venom 2</p>
-            </div>
-            <div>
-                <p>Horario: 10pm</p>
-            </div>
-            <div>
-                <p>Tipo butaca: Eco friendly</p>
-            </div>
-        </article>
-    </section>
+
+    <script src="../js/compra.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>

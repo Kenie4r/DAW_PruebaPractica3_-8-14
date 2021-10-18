@@ -46,6 +46,12 @@
     gap: 1em;
 }
 
+.contenedor-radios{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
 .contenedor-btn{
     padding: 1em;
     display: flex;
