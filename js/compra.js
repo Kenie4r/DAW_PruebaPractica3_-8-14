@@ -79,7 +79,7 @@ function enviarFormulario() {
     var usuario = $("#txtName").val();
     var entradas = $("#nEntrada").val();
     var horario = $('input:radio[name=horario]:checked').val();
-    var butaca = $('input:radio[name=tipoButaca]:checked').val();
+    var butaca = $("#tipoButaca").html();
     var errores = 0;
     var url = "factura.html";
 
