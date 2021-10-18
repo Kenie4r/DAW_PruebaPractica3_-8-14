@@ -9,33 +9,32 @@
 </head>
 <body>
     <section>
-        <article class="contenedor-titulo-factura">
-            <h2>"POLLO LOCO" CINE</h2>
+        <article class="contenedor-titulo">
+            <h2 id="titulo-pelicula">Registros de compra</h2>
         </article>
-        <article class="contenedor-factura">
-            <div>
-                <h3>FACTURA</h3>
-            </div>
-            <div>
-                <p id="factura-pelicula"></p>
-            </div>
-            <div>
-                <p id="factura-n-entradas"></p>
-            </div>
-            <div>
-                <p id="factura-horario"></p>
-            </div>
-            <div>
-                <p id="factura-butaca"></p>
-            </div>
+        <article class="contenedor-registro">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de la película</th>
+                    <th>Duración</th>
+                    <th>Precio</th>
+                    <th>Clasificación</th>
+                    <th>Entradas vendidas</th>
+                    <th>Horario</th>
+                    <th>Butaca</th>
+                </tr>
+                <tr id="registros">
+                    <!-- JQUERY -->
+                </tr>
+            </table>
         </article>
         <article class="contenedor-btn">
             <a href="../index.html" class="btnSubmit">Inicio</a>
-            <a href="#" class="btnSubmit">Ver registros</a>
         </article>
     </section>
 
-    <script src="../js/factura.js"></script>
+    <script src="../js/registro.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>

@@ -12,6 +12,6 @@ function inicio(){
     cliente.html( "<span>A nombre de:</span> " + localStorage.cliente );
     pelicula.html( "<span>Pelicula seleccionada:</span> " + localStorage.pelicula );
     entradas.html( "<span>Cantidad de entradas:</span> " + localStorage.entradas );
-    horario.html( "<span>Cantidad de entradas:</span> " + localStorage.horario );
-    butaca.html( "<span>Cantidad de entradas:</span> " + localStorage.butaca );
+    horario.html( "<span>En el horario:</span> " + localStorage.horario );
+    butaca.html( "<span>Con el tipo de butaca:</span> " + localStorage.butaca );
 }
