@@ -1,7 +1,7 @@
 /* PROCESOS */
 window.onload = inicio; // Establece una funcion de inicio
 
-//Definimos la funcion de inicio
+//Definimos la funcion de inicio, donde llenamos los campos a partir del localstorage llenado en la compra
 function inicio(){
     var cliente = $("#cliente");
     var pelicula = $("#factura-pelicula");

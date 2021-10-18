@@ -1,4 +1,4 @@
-/* DATOS PELICULAS */
+/* DATOS PELICULAS ------------------------------------------------------------------------------*/
 /* A partir de este objeto JSON obtenemos los datos de las peliculas en cartelera */
 const peliculas  = {
     "Pelicula1" : {
@@ -58,22 +58,23 @@ const peliculas  = {
     
 }
 
-/* PROCESOS */
+/* PROCESOS ------------------------------------------------------------------------------------*/
 window.onload = inicio; // Establece una funcion de inicio
 
-//Definimos la funcion de inicio
+//Definimos la funcion de inicio ----------------------------------------
 function inicio(){
-    var btnSubmit = document.getElementById("btnComprar");
-    var idPelicula = localStorage.idPelicula;
+    var btnSubmit = document.getElementById("btnComprar"); //Boton para comprar
+    var idPelicula = localStorage.idPelicula; //Obtenemos del localstorage la pelicula seleccionada
 
-    llenarPelicula(idPelicula);
+    llenarPelicula(idPelicula); //Llenamos los datos de la pelicula a partir del id
 
+    //Colocamos una funcion para manejar la compra
     btnSubmit.addEventListener("click", function(){
         enviarFormulario();
     });
 }
 
-//Definimos la funcion de compra
+//Definimos la funcion de compra ----------------------------------------
 function enviarFormulario() {
     var pelicula = $("#titulo-pelicula").html();
     var usuario = $("#txtName").val();
@@ -83,6 +84,7 @@ function enviarFormulario() {
     var errores = 0;
     var url = "factura.html";
 
+    //Validamos los campos
     if( usuario == "" ){
         errores++;
     }else if( !isNaN(usuario) ){
@@ -105,6 +107,7 @@ function enviarFormulario() {
     }
 
     if( errores == 0 ){
+        //Guardamos los datos en localstorage de la compra, para usarlos en otras partes
         localStorage.setItem( "cliente", usuario );
         localStorage.setItem( "pelicula", pelicula );
         localStorage.setItem( "entradas", entradas );
@@ -113,59 +116,52 @@ function enviarFormulario() {
 
         alert( "Su compra se ha registrado con éxito." );
 
+        //Dirigimos al usuario a la factura
         $(location).attr('href',url);
     }else{
         alert("Complete correctamente los campos.");
     }
 }
 
-//Definimos la funcion para llenar todos los campos de la pelicula
+//Definimos la funcion para llenar todos los campos de la pelicula a partir de un id ------------
 function llenarPelicula(idPelicula) {
-    var titulo = document.getElementById("titulo-pelicula");
-    var poster = document.getElementById("poster-pelicula");
-    var butaca = document.getElementById("tipoButaca");
 
+    //Llenamos los campos, a partir de brindarle un array elegido por el id
     switch( idPelicula ){
         case "1":
-            titulo.innerHTML = peliculas.Pelicula1.Nombre;
-            poster.src = "../" + peliculas.Pelicula1.img;
-            llenarHorario(peliculas.Pelicula1.Horarios);
-            butaca.innerText = peliculas.Pelicula1.TipoB;
+            llenarCampos(peliculas.Pelicula1);
             break;
         case "2":
-            titulo.innerHTML = peliculas.Pelicula2.Nombre;
-            poster.src = "../" + peliculas.Pelicula2.img;
-            llenarHorario(peliculas.Pelicula2.Horarios);
-            butaca.innerText = peliculas.Pelicula2.TipoB;
+            llenarCampos(peliculas.Pelicula2);
             break;
         case "3":
-            titulo.innerHTML = peliculas.Pelicula3.Nombre;
-            poster.src = "../" + peliculas.Pelicula3.img;
-            llenarHorario(peliculas.Pelicula3.Horarios);
-            butaca.innerText = peliculas.Pelicula3.TipoB;
+            llenarCampos(peliculas.Pelicula3);
             break;
         case "4":
-            titulo.innerHTML = peliculas.Pelicula4.Nombre;
-            poster.src = "../" + peliculas.Pelicula4.img;
-            llenarHorario(peliculas.Pelicula4.Horarios);
-            butaca.innerText = peliculas.Pelicula4.TipoB;
+            llenarCampos(peliculas.Pelicula4);
             break;
         case "5":
-            titulo.innerHTML = peliculas.Pelicula5.Nombre;
-            poster.src = "../" + peliculas.Pelicula5.img;
-            llenarHorario(peliculas.Pelicula5.Horarios);
-            butaca.innerText = peliculas.Pelicula5.TipoB;
+            llenarCampos(peliculas.Pelicula5);
             break;
         default:
-            titulo.innerHTML = peliculas.Pelicula1.Nombre;
-            poster.src = "../img/venom2.jpg";
-            llenarHorario(peliculas.Pelicula1.Horarios);
-            butaca.innerText = peliculas.Pelicula1.TipoB;
+            llenarCampos(peliculas.Pelicula1);
             break;
     }
 }
 
-//Definimos la funcion para rellenar los horarios
+//Definimos la funcion para llenar los contenedores con los datos de un array -----------
+function llenarCampos(array) {
+    var titulo = document.getElementById("titulo-pelicula");
+    var poster = document.getElementById("poster-pelicula");
+    var butaca = document.getElementById("tipoButaca");
+    
+    titulo.innerHTML = array.Nombre;
+    poster.src = "../" + array.img;
+    llenarHorario(array.Horarios);
+    butaca.innerText = array.TipoB;
+}
+
+//Definimos la funcion para rellenar los horarios -------------------------------------------
 function llenarHorario(array) {
     var horarios = document.getElementById("horarios-peliculas");
 
@@ -174,7 +170,7 @@ function llenarHorario(array) {
     }
 }
 
-//Definimos la funcion para crear la estructura de un radio
+//Definimos la funcion para crear la estructura de un radio --------------------------------
 function horarioRadio(hora) {
     var elemento = "";
     elemento = "<div class='radio-contenedor'>";

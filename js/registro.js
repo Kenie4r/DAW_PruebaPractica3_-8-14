@@ -53,15 +53,16 @@ const peliculas = {
     
 }
 
-/* PROCESOS */
+/* PROCESOS ---------------------------------------------------------------------------------*/
 window.onload = inicio; // Establece una funcion de inicio
 
-//Definimos la funcion de inicio
+//Definimos la funcion de inicio ------------------------------------------------------------
 function inicio(){
+    //Llenamos la tabla con los registros
     var registros = $("#registros");
     var estructura = "";
 
-    estructura = llenarPelicula(localStorage.idPelicula);
+    estructura = llenarPelicula(localStorage.idPelicula); //Obtenemos en una funcion los datos
     estructura += "<td>" + localStorage.entradas + "</td>";
     estructura += "<td>" + localStorage.horario + "</td>";
     estructura += "<td>" + localStorage.butaca + "</td>";
@@ -69,7 +70,7 @@ function inicio(){
     registros.html(estructura);
 }
 
-//Definimos la funcion para llenar todos los campos de la pelicula
+//Definimos la funcion para llenar todos los campos "td" de la pelicula ------------------------------
 function llenarPelicula(idPelicula, estructura) {
     estructura = "<td>" + idPelicula + "</td>";
 
