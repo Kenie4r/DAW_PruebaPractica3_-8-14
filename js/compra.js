@@ -60,7 +60,7 @@ window.onload = inicio; // Establece una funcion de inicio
 function inicio(){
     var btnSubmit = document.getElementById("btnComprar");
     var idPelicula = localStorage.idPelicula;
-    alert(idPelicula);
+
     if( isNaN(idPelicula) ){
         idPelicula = 1;
     }
@@ -74,11 +74,19 @@ function inicio(){
 
 //Definimos la funcion de compra
 function enviarFormulario() {
+    var pelicula = $("#titulo-pelicula").html();
+    var usuario = $("#txtName").val();
     var entradas = $("#nEntrada").val();
     var horario = $('input:radio[name=horario]:checked').val();
     var butaca = $('input:radio[name=tipoButaca]:checked').val();
     var errores = 0;
+    var url = "factura.html";
 
+    if( usuario == "" ){
+        errores++;
+    }else if( !isNaN(usuario) ){
+        errores++;
+    }
     if( entradas == undefined ){
         errores++;
     }else if( isNaN(entradas) ){
@@ -96,11 +104,15 @@ function enviarFormulario() {
     }
 
     if( errores == 0 ){
+        localStorage.setItem( "cliente", usuario );
+        localStorage.setItem( "pelicula", pelicula );
         localStorage.setItem( "entradas", entradas );
         localStorage.setItem( "horario", horario );
         localStorage.setItem( "butaca", butaca );
 
         alert( "Su compra se ha registrado con éxito." );
+
+        $(location).attr('href',url);
     }else{
         alert("Complete correctamente los campos.");
     }
@@ -117,17 +129,22 @@ function llenarPelicula(idPelicula) {
             poster.src = "../img/venom2.jpg";
             llenarHorario(peliculas.Pelicula1.Horarios);
             break;
-        case 1:
+        case 2:
             titulo.innerHTML = peliculas.Pelicula2.Nombre;
             break;
-        case 1:
+        case 3:
             titulo.innerHTML = peliculas.Pelicula3.Nombre;
             break;
-        case 1:
+        case 4:
             titulo.innerHTML = peliculas.Pelicula4.Nombre;
             break;
-        case 1:
+        case 5:
             titulo.innerHTML = peliculas.Pelicula5.Nombre;
+            break;
+        default:
+            titulo.innerHTML = peliculas.Pelicula1.Nombre;
+            poster.src = "../img/venom2.jpg";
+            llenarHorario(peliculas.Pelicula1.Horarios);
             break;
     }
 }

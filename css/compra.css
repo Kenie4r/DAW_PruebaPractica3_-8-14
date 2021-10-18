@@ -30,8 +30,8 @@
 .contenedor-poster img{
     display: block;
     margin: auto;
-    height: 50vh;
-    max-height: 50vh;
+    height: 60vh;
+    max-height: 60vh;
 }
 
 .contenedor-form{
@@ -57,9 +57,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1em;
+    flex-direction: row;
 }
 
 .btnSubmit{
+    display: block;
+    text-decoration: none;
     padding: 1em;
     background-color: var(--rojoOscuro);
     color: var(--rojoSuave);
@@ -87,4 +91,8 @@
     align-items: center;
     gap: 1em;
     border: black solid 2px;
+}
+
+label, span{
+    font-weight: bold;
 }
