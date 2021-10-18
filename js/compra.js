@@ -74,11 +74,19 @@ function inicio(){
 
 //Definimos la funcion de compra
 function enviarFormulario() {
+    var pelicula = $("#titulo-pelicula").html();
+    var usuario = $("#txtName").val();
     var entradas = $("#nEntrada").val();
     var horario = $('input:radio[name=horario]:checked').val();
     var butaca = $('input:radio[name=tipoButaca]:checked').val();
     var errores = 0;
+    var url = "factura.html";
 
+    if( usuario == "" ){
+        errores++;
+    }else if( !isNaN(usuario) ){
+        errores++;
+    }
     if( entradas == undefined ){
         errores++;
     }else if( isNaN(entradas) ){
@@ -96,11 +104,15 @@ function enviarFormulario() {
     }
 
     if( errores == 0 ){
+        localStorage.setItem( "cliente", usuario );
+        localStorage.setItem( "pelicula", pelicula );
         localStorage.setItem( "entradas", entradas );
         localStorage.setItem( "horario", horario );
         localStorage.setItem( "butaca", butaca );
 
         alert( "Su compra se ha registrado con éxito." );
+
+        $(location).attr('href',url);
     }else{
         alert("Complete correctamente los campos.");
     }
