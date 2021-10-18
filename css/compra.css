@@ -1,3 +1,10 @@
+:root{
+    --rojoOscuro: #261212;
+    --rojoMedio: #A6372D;
+    --rojoSuave: #F24130;
+    --gris: #A68C6D;
+}
+
 *{
     margin: 0%;
     padding: 0%;
@@ -7,5 +14,71 @@
 .contenedor-titulo{
     padding: 2em;
     text-align: center;
-    background-color: aqua;
+    background-color: var(--rojoOscuro);
+    color: var(--rojoSuave);
+}
+
+.contenedor-cuerpo{
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+}
+
+.contenedor-poster{
+    background-color: var(--gris);
+}
+
+.contenedor-poster img{
+    display: block;
+    margin: auto;
+    height: 50vh;
+    max-height: 50vh;
+}
+
+.contenedor-form{
+    padding: 2em;
+    background-color: var(--gris);
+}
+
+.contenedor-input{
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.contenedor-btn{
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnSubmit{
+    padding: 1em;
+    background-color: var(--rojoOscuro);
+    color: var(--rojoSuave);
+    border: none;
+}
+
+.btnSubmit:hover{
+    cursor: pointer;
+    background-color: var(--rojoMedio);
+    color: var(--rojoOscuro);
+}
+
+/* FACTURA */
+
+.contenedor-titulo-factura{
+    padding: 2em;
+    text-align: center;
+}
+
+.contenedor-factura{
+    margin: 0 2em 2em 2em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    border: black solid 2px;
 }
