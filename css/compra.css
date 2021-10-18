@@ -52,6 +52,14 @@
     gap: 1em;
 }
 
+.radio-contenedor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
 .contenedor-btn{
     padding: 1em;
     display: flex;
@@ -95,4 +103,25 @@
 
 label, span{
     font-weight: bold;
+}
+
+/* REGSITRO */
+.contenedor-registro{
+    margin: 2em;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border: black 2px solid;
+}
+
+td, th, tr{
+    border-collapse: collapse;
+    border: black 2px solid;
+}
+
+td, th{
+    text-align: center;
+    padding: 1em;
 }

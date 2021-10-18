@@ -157,9 +157,9 @@ function llenarHorario(array) {
 //Definimos la funcion para crear la estructura de un radio
 function horarioRadio(hora) {
     var elemento = "";
-    elemento = "<div>";
+    elemento = "<div class='radio-contenedor'>";
     elemento += "<input type='radio' name='horario' id='horario' value='" + hora + "'>"
-    elemento += "<label>" + hora + "</label>"
+    elemento += "<p>" + hora + "</p>"
     elemento += "</div>";
     return elemento;
 }
