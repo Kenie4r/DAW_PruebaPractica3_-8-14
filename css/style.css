@@ -74,6 +74,10 @@ header div{
 .info .presentacion{
     flex-direction: column;
 }
+.horas{
+    display: flex;
+    gap: 2px;
+}
 .horas .hora{
     background-color: gray;
     padding: 0.5em;

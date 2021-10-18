@@ -7,7 +7,8 @@
         "TipoB": "Premiun", 
         "Horarios": {
             "1": "4:30" , "2": "6:30", "3": "8:30"
-        } 
+        },
+        "img" : "https://www.lifeboxset.com/wp-content/uploads/2020/01/20200110_161713926344-vvdmvn88xby31-292x365.png"
     }, "Pelicula2" : {
         "Nombre": "BlackWidown",
         "Duracion": "2 horas" ,
